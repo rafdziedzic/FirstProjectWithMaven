@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class DbConfiguration {
     private static final String userName = "root";
-    private static final String userPassword = "************";  //********
+    private static final String userPassword = "*************"; //******
     private static final String url = "jdbc:mysql://localhost:3306/library";
 
     public static Connection connection = null;
@@ -55,7 +55,7 @@ public class DbConfiguration {
             System.out.println("A new object has been added successfully");
 
         } catch (SQLException e) {
-            System.out.println("Error");
+            System.out.println("Sql command error");
         }
         return null;
     }

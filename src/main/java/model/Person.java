@@ -1,22 +1,22 @@
 package model;
 
 public class Person {
-    private int id;
+    private int idPerson;
     private String name;
     private String surname;
 
-    public Person(int id, String name, String surname) {
-        this.id = id;
+    public Person(int idPerson, String name, String surname) {
+        this.idPerson = idPerson;
         this.name = name;
         this.surname = surname;
     }
 
-    public int getId() {
-        return id;
+    public int getIdPerson() {
+        return idPerson;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdPerson(int idPerson) {
+        this.idPerson = idPerson;
     }
 
     public String getName() {
@@ -42,14 +42,14 @@ public class Person {
 
         Person person = (Person) o;
 
-        if (id != person.id) return false;
+        if (idPerson != person.idPerson) return false;
         if (name != null ? !name.equals(person.name) : person.name != null) return false;
         return surname != null ? surname.equals(person.surname) : person.surname == null;
     }
 
     @Override
     public int hashCode() {
-        int result = id;
+        int result = idPerson;
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (surname != null ? surname.hashCode() : 0);
         return result;
@@ -58,7 +58,7 @@ public class Person {
     @Override
     public String toString() {
         return "Person{" +
-                "id=" + id +
+                "idPerson=" + idPerson +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 '}';
