@@ -15,11 +15,10 @@ public class BorrowRepository implements DaoBorrow {
     public void addBorrow(String name, String surname, String bookTitle) throws Exception {
         int idperson = personRepository.findPerson(name, surname);
         int idBook = bookRepository.findBook(bookTitle);
-        int id = 5;
+        int id = 7;
         dbConfiguration.dbExecuteUpdateQuery("INSERT INTO `library`.`borrow` (`idborrow`, `idbook`, `idperson`) " +
                 "Values " + "(" + "'" + id + "'" + ",'" + idBook + "'," + "'" + idperson + "')");
     }
-
 
     public void addBorrow(String surname, String bookTitle) throws Exception {
         int idperson = personRepository.findPerson(surname);
