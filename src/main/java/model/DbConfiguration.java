@@ -1,17 +1,22 @@
 package model;
 
-import java.sql.*;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.ResultSet;
 
 public class DbConfiguration {
-    private static final String userName = "root";
-    private static final String userPassword = "*************";
-    private static final String url = "jdbc:mysql://localhost:3306/library";
+    private static final String USER_NAME = "root";
+    private static final String USER_PASSWORD = "rd3290";
+    private static final String URL = "jdbc:mysql://localhost:3306/klub";
 
     public static Connection connection = null;
 
     public static void dbConnection() {
         try {
-            connection = DriverManager.getConnection(url, userName, userPassword);
+            connection = DriverManager.getConnection(URL, USER_NAME, USER_PASSWORD);
             Statement statement = connection.createStatement();
         } catch (SQLException e) {
             System.out.println("Invalid database configuration");
